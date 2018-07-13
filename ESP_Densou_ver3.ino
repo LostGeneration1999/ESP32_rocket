@@ -308,6 +308,7 @@ else{
   }
 }
 
+//電池の耐久試験
 void test_timer(){
  if(n==0){
     now_time = millis(); 
