@@ -177,7 +177,7 @@ mySensor.magUpdate();
 void highest_detector(float alti){
   float delta =  alti - last_alti;
   Serial.println(String("delta:  ")+delta);
-  if(abs(delta) < 1){
+  if(abs(delta) < 0.20){
     k ++;
     if(k>=5&&k<16){
       flight_motor();
@@ -227,7 +227,7 @@ int flight_timer(){
 
  //MPU9250の設置方向に合わせてください
  //MPU9250が逆向きなので、負の値をとる
-    if(ax < 0){
+    if(ax < 40){
       //ax>0だとダメなのであとで調整
       rise_detector(ax,alti);
       Serial.println("This rocket detected rising... ....");
