@@ -339,13 +339,13 @@ int monitoring_rocket(){
    }
 }
 
+//GPSの処理関数
 static void smartDelay(unsigned long ms)                
 {
   unsigned long start = millis();
   do
   {
-    while (Serial1
-    .available())
+    while (Serial1.available())
       gps.encode(Serial1.read());
   } while (millis() - start < ms);
 }
